@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:gabriels_vault/screens/constant/ColorsPalette.dart';
 import 'package:gabriels_vault/screens/homescreen/birthdayItems.dart';
+import 'package:gabriels_vault/widgets/EmptyMessage/MessageEmpty.dart';
 import 'package:gabriels_vault/widgets/birthdayList/BirthdayList.dart';
 import 'package:gabriels_vault/widgets/bottomnavbar/BottomNavbar.dart';
 
@@ -277,16 +278,7 @@ class _HomescreenState extends State<Homescreen>
                 children: features.map((feature) {
                   List<BirthdayItem> filteredItems = getFilteredItems(feature);
                   if (filteredItems.isEmpty) {
-                    return Center(
-                      child: Text(
-                        "No items available for $feature",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    );
+                    return MessageEmpty();
                   } else {
                     return ReusableBirthdayList(birthdays: filteredItems);
                   }
