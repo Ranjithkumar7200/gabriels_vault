@@ -20,7 +20,7 @@ class BottomNavbar extends StatelessWidget {
       alignment: Alignment.topCenter,
       children: [
         BottomAppBar(
-          color: const Color.fromARGB(255, 167, 160, 160),
+          color: ColorsPalette.bg,
           shape: CircularNotchedRectangle(),
           notchMargin: 8,
           child: Container(
@@ -38,20 +38,18 @@ class BottomNavbar extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: -50,
+          top: -40,
           child: ClipPath(
             clipper: HalfCircleClipper(),
             child: Container(
                 height: 50,
                 width: 100,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 182, 177, 177),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.elliptical(200, 200),
-                    topRight: Radius.circular(200),
-                    
-                  ),
-                )),
+                    color: ColorsPalette.bg,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(200),
+                      topRight: Radius.circular(200),
+                    ))),
           ),
         ),
         Positioned(
@@ -61,9 +59,7 @@ class BottomNavbar extends StatelessWidget {
             shape: CircleBorder(),
             backgroundColor: ColorsPalette.primary,
             child: Icon(Icons.add, size: 30, color: Colors.white),
-            onPressed: () {
-            
-            },
+            onPressed: () {},
           ),
         ),
       ],
